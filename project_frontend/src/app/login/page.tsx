@@ -34,7 +34,7 @@ export default function LoginPage() {
         const endpoint = isLogin ? '/api/customer/login' : '/api/customer/register';
 
         try {
-            const res = await fetch(`http://localhost:5000${endpoint}`, {
+            const res = await fetch(`https://skillsaarthi.onrender.com${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

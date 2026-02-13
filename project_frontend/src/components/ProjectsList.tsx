@@ -76,13 +76,13 @@ export default function ProjectsList() {
     const handleDeleteProject = async (projectId: string) => {
         if (confirm('Are you sure you want to delete this project?')) {
             try {
-                const res = await fetch(`http://localhost:5000/api/projects/${projectId}`, {
+                const res = await fetch(`https://skillsaarthi.onrender.com/api/projects/${projectId}`, {
                     method: 'DELETE',
                 });
 
                 if (res.ok) {
                     alert('Project deleted successfully!');
-                    const projectsRes = await fetch('http://localhost:5000/api/projects');
+                    const projectsRes = await fetch('https://skillsaarthi.onrender.com/api/projects');
                     const projectsData = await projectsRes.json();
                     setProjects(projectsData);
                 } else {
@@ -117,11 +117,11 @@ export default function ProjectsList() {
                 tags: tagsArray
             };
 
-            let url = 'http://localhost:5000/api/projects/add';
+            let url = 'https://skillsaarthi.onrender.com/api/projects/add';
             let method = 'POST';
 
             if (editingProject) {
-                url = `http://localhost:5000/api/projects/${editingProject._id}`;
+                url = `https://skillsaarthi.onrender.com/api/projects/${editingProject._id}`;
                 method = 'PUT';
             }
 
@@ -138,7 +138,7 @@ export default function ProjectsList() {
                 setNewProject({
                     role: '', company: '', location: '', subtitle: '', rate: '', workers: 0, projectType: '', workType: '', tags: '', isUrgent: false
                 });
-                const projectsRes = await fetch('http://localhost:5000/api/projects');
+                const projectsRes = await fetch('https://skillsaarthi.onrender.com/api/projects');
                 const projectsData = await projectsRes.json();
                 setProjects(projectsData);
             } else {
@@ -154,7 +154,7 @@ export default function ProjectsList() {
         const fetchData = async () => {
             try {
                 // Fetch Projects
-                const projectsRes = await fetch('http://localhost:5000/api/projects');
+                const projectsRes = await fetch('https://skillsaarthi.onrender.com/api/projects');
                 const projectsData = await projectsRes.json();
                 setProjects(projectsData);
 
@@ -163,7 +163,7 @@ export default function ProjectsList() {
 
                 if (token) {
                     try {
-                        const applicationsRes = await fetch('http://localhost:5000/api/worker/applications', {
+                        const applicationsRes = await fetch('https://skillsaarthi.onrender.com/api/worker/applications', {
                             headers: { Authorization: `Bearer ${token}` }
                         });
                         if (applicationsRes.ok) {
@@ -173,7 +173,7 @@ export default function ProjectsList() {
                         }
                     } catch (e) { }
 
-                    const profileRes = await fetch('http://localhost:5000/api/auth/me', {
+                    const profileRes = await fetch('https://skillsaarthi.onrender.com/api/auth/me', {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     if (profileRes.ok) {
@@ -201,7 +201,7 @@ export default function ProjectsList() {
 
         setApplying(projectId);
         try {
-            const res = await fetch('http://localhost:5000/api/projects/apply', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/projects/apply', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -468,8 +468,8 @@ export default function ProjectsList() {
                                     onClick={() => handleApply(project._id)}
                                     disabled={appliedProjectIds.has(project._id) || applying === project._id}
                                     className={`w-full py-2.5 rounded-lg font-bold text-sm transition-all ${appliedProjectIds.has(project._id)
-                                            ? "bg-green-100 text-green-700 cursor-default"
-                                            : "bg-black text-white hover:bg-gray-800"
+                                        ? "bg-green-100 text-green-700 cursor-default"
+                                        : "bg-black text-white hover:bg-gray-800"
                                         }`}
                                 >
                                     {appliedProjectIds.has(project._id)

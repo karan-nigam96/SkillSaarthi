@@ -13,7 +13,7 @@ export default function ConstructionFeatures() {
     useEffect(() => {
         const fetchContent = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/content');
+                const res = await fetch('https://skillsaarthi.onrender.com/api/content');
                 const data = await res.json();
                 setContent(data);
             } catch (error) {
@@ -40,7 +40,7 @@ export default function ConstructionFeatures() {
 
         try {
             const token = localStorage.getItem('customerToken');
-            const res = await fetch('http://localhost:5000/api/admin/upload', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/admin/upload', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`

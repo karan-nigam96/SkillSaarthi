@@ -17,7 +17,7 @@ export default function WorkerEarnings() {
             }
 
             try {
-                const res = await fetch('http://localhost:5000/api/worker/earnings', {
+                const res = await fetch('https://skillsaarthi.onrender.com/api/worker/earnings', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (res.ok) {

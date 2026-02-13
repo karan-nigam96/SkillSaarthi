@@ -16,7 +16,7 @@ export default function CleaningServices() {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/services?category=Cleaning');
+                const res = await fetch('https://skillsaarthi.onrender.com/api/services?category=Cleaning');
                 const data = await res.json();
                 setServices(data);
             } catch (error) {
@@ -44,7 +44,7 @@ export default function CleaningServices() {
 
         try {
             const token = localStorage.getItem('customerToken');
-            const res = await fetch('http://localhost:5000/api/admin/upload', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/admin/upload', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -47,7 +47,7 @@ export default function ProfilePage() {
         }
 
         try {
-            const res = await fetch('http://localhost:5000/api/customer/profile', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/customer/profile', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

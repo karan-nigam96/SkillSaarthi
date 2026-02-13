@@ -24,7 +24,7 @@ export default function WorkerDashboard() {
             }
 
             try {
-                const res = await fetch('http://localhost:5000/api/worker/profile', {
+                const res = await fetch('https://skillsaarthi.onrender.com/api/worker/profile', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (res.ok) {
@@ -49,7 +49,7 @@ export default function WorkerDashboard() {
             if (!token) return;
 
             try {
-                const res = await fetch('http://localhost:5000/api/worker/applications', {
+                const res = await fetch('https://skillsaarthi.onrender.com/api/worker/applications', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (res.ok) {
@@ -68,7 +68,7 @@ export default function WorkerDashboard() {
     const updateAvailability = async (newIsAvailable: boolean, newMode: string, newSlots: string[]) => {
         const token = localStorage.getItem('workerToken');
         try {
-            const res = await fetch('http://localhost:5000/api/worker/availability', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/worker/availability', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

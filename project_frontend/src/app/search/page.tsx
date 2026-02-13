@@ -25,7 +25,7 @@ export default function SearchPage() {
         const fetchResults = async () => {
             setLoading(true);
             try {
-                const res = await fetch(`http://localhost:5000/api/services?search=${encodeURIComponent(query)}`);
+                const res = await fetch(`https://skillsaarthi.onrender.com/api/services?search=${encodeURIComponent(query)}`);
                 const data = await res.json();
                 setResults(data);
             } catch (error) {

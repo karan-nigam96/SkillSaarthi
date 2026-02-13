@@ -25,7 +25,7 @@ export default function WorkerRegister() {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5000/api/auth/worker/register', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/auth/worker/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

@@ -19,7 +19,7 @@ export default function ServiceDetailPage() {
                 // In a real app, you might fetch by ID. 
                 // For now, we'll fetch all and find the one matching the ID from params.
                 // Or if the API supports it: /api/services/${params.id}
-                const res = await fetch(`http://localhost:5000/api/services`);
+                const res = await fetch(`https://skillsaarthi.onrender.com/api/services`);
                 const data = await res.json();
                 const found = data.find((s: any) => s._id === params.id);
                 setService(found);
@@ -48,7 +48,7 @@ export default function ServiceDetailPage() {
 
         try {
             const token = localStorage.getItem('customerToken');
-            const res = await fetch('http://localhost:5000/api/admin/upload', {
+            const res = await fetch('https://skillsaarthi.onrender.com/api/admin/upload', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`

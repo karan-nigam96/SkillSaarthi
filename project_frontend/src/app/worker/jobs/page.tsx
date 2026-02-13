@@ -17,7 +17,7 @@ export default function WorkerJobs() {
             }
 
             try {
-                const res = await fetch('http://localhost:5000/api/jobs/worker', {
+                const res = await fetch('https://skillsaarthi.onrender.com/api/jobs/worker', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (res.ok) {
@@ -37,7 +37,7 @@ export default function WorkerJobs() {
     const handleStatusUpdate = async (jobId: string, status: string) => {
         const token = localStorage.getItem('workerToken');
         try {
-            const res = await fetch(`http://localhost:5000/api/jobs/${jobId}/status`, {
+            const res = await fetch(`https://skillsaarthi.onrender.com/api/jobs/${jobId}/status`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

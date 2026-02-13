@@ -45,7 +45,7 @@ const uploadImage = async (req, res) => {
         }
 
         const { type, id } = req.body; // type: 'service' or 'project'
-        const imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+        const imageUrl = `https://skillsaarthi.onrender.com/uploads/${req.file.filename}`;
 
         if (type === 'service') {
             const service = await Service.findById(id);
